@@ -1,3 +1,4 @@
+@include('inc.nav')
 @extends('layouts.app')
 <div class="container-sm bg-white mt-5 w-50 "  >
     <p class="h2  pt-3 pb-3 text-uppercase">Sponsor's Details</p>

@@ -1,3 +1,4 @@
+@include('inc.nav')
 @extends('layouts.app')
 
 <div class="container-sm bg-white mt-5 w-50"> 
@@ -125,5 +126,3 @@
       }, false);
     })();
     </script>
-</body>
-</html>
