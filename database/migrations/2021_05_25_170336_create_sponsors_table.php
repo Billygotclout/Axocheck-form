@@ -22,6 +22,7 @@ class CreateSponsorsTable extends Migration
             $table->string("City");
             $table->string("Country");
             
+            
             $table->timestamps();
         });
     }

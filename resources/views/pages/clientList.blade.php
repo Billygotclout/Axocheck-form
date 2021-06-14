@@ -2,7 +2,7 @@
 @extends('layouts.app')
 @section('content')
     <h1 class="h3 mb-5 mt-4">Lists Of Registered Clients</h1>
-   
+  
     <table class="table table-striped">
         <tr>
             <td>Id</td>
@@ -18,6 +18,8 @@
             <td>ailments</td>
             <td>special</td>
             <td>dov</td>
+            <td></td>
+            <td></td>
            
         </tr>
         @foreach ($clients as $client)
@@ -35,10 +37,15 @@
          <td>{{$client->ailments}}</td>
          <td>{{$client->special}}</td>
          <td>{{$client->dov}}</td>
+         <td><a href={{"editC/".$client['id']}} class="btn btn-primary">Edit</a></td>
+         <td><a href={{"deleted/".$client['id']}} class="btn btn-danger">Delete</a></td>
+
+        
          
         
      </tr>
         @endforeach
+
       
   
 @endsection

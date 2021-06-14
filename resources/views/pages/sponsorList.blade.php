@@ -13,6 +13,10 @@
             <td>Phonenumber</td>
             <td>City</td>
             <td>Country</td>
+       <td></td>
+       <td></td>
+       
+            
             
            
         </tr>
@@ -24,6 +28,9 @@
          <td>{{$sponsor->Phonenumber}}</td>
          <td>{{$sponsor->City}}</td>
          <td>{{$sponsor->Country}}</td>
+         <td><a href={{"edit/".$sponsor['id']}} class="btn btn-primary">Edit</a></td>
+         <td><a href={{"delete/".$sponsor['id']}} class="btn btn-danger">Delete</a></td>
+        
          
          
         

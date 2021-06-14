@@ -27,7 +27,9 @@ class CreateClientsTable extends Migration
             $table->string("ailments")->nullable();
             $table->string("special")->nullable();
             $table-> date("dov");
+           
             $table->timestamps();
+           
         });
     }
 

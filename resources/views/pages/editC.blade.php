@@ -3,22 +3,22 @@
 
 <div class="container-sm bg-white mt-5 w-50"> 
     <p class="h2  pt-3 pb-3 text-uppercase">Client Details</p>
-<form action="/createC" class=" g-3 needs-validation" novalidate method="POST">
+<form action="/editC" class=" g-3 needs-validation" novalidate method="POST">
   @csrf
-  
+  <input type="hidden" name="id" value="{{$client['id']}}">
   <div class="form-group col-md-6">
     <label for="Firstname" class="form-label" > First Name</label>
-    <input type="text" class="form-control" name="Firstname" required>
+    <input type="text" class="form-control" name="Firstname" required value="{{$client['Firstname']}}">
     <div class="invalid-feedback">Please fill out this field.</div>
   </div>
   <div class="form-group col-md-6">
     <label for="Lastname" class="form-label"> Last Name</label>
-    <input type="text" class="form-control" name="Lastname" required>
+    <input type="text" class="form-control" name="Lastname" required value="{{$client['Lastname']}}">
     <div class="invalid-feedback">Please fill out this field.</div>
   </div>
   <div class="form-group col-md-6">
     <label for="relationship" class="form-label">Relationship to sponsor</label>
-   <select  name="relationship" class="form-control" required>
+   <select  name="relationship" class="form-control" required >
      <option value="" >Pick A Relationship</option>
      <option value="Self" >Self</option>
      <option value="Father">Father</option>
@@ -40,11 +40,11 @@
    <div class="invalid-feedback">Please fill out this field.</div>
   </div>
   <div class="form-group col-md-6 mt-2">
-    <label for="gender" class="form-check-label"> Gender</label>
+    <label for="gender" class="form-check-label" > Gender</label>
     
   
   <div class="form-check" >
-    <input class="form-check-input" type="radio" name="gender" required value="Male">
+    <input class="form-check-input" type="radio" name="gender" required value="Male" >
     <label class="form-check-label" for="male">
    Male
     </label>
@@ -59,17 +59,17 @@
 </div>
   <div class="form-group col-md-6">
     <label for="dob" class="form-label"> Date of Birth</label>
-    <input type="date" class="form-control" required name="dob">
+    <input type="date" class="form-control" required name="dob" value="{{$client['dob']}}">
     <div class="invalid-feedback">Please fill out this field.</div>
   </div>
   <div class="form-group col-md-6">
     <label for="Phonenumber" class="form-label"> Phone Number</label>
-    <input type="text" class="form-control" name="Phonenumber" required>
+    <input type="text" class="form-control" name="Phonenumber" required value="{{$client['Phonenumber']}}">
     <div class="invalid-feedback">Please fill out this field.</div>
   </div>
   <div class="form-group col-md-6">
     <label for="City" class="form-label"> Enter City</label>
-    <input type="text" class="form-control" name="City" required>
+    <input type="text" class="form-control" name="City" required value="{{$client['City']}}">
     <div class="invalid-feedback">Please fill out this field.</div>
   </div>
   <div class="form-group col-md-6">
@@ -81,12 +81,12 @@
   </div>
   <div class="form-group col-md-6">
     <label for="state" class="form-label"> Enter State</label>
-    <input type="text" class="form-control" name="state"required>
+    <input type="text" class="form-control" name="state"required value="{{$client['state']}}">
     <div class="invalid-feedback">Please fill out this field.</div>
   </div>
   <div class="form-group col-md-6">
     <label for="ailments" class="form-label">Any known Ailments?</label>
-    <textarea class="form-control"  rows="5" name="ailments" ></textarea>
+    <textarea class="form-control"  rows="5" name="ailments"  ></textarea>
   </div>
   <div class="form-group col-md-6">
     <label for="special" class="form-label">Any Special Instructions?</label>
@@ -94,12 +94,12 @@
   </div>
   <div class="form-group col-md-6">
     <label for="dov" class="form-label"> Select Date Of Visit</label>
-    <input type="date" class="form-control" required name="dov">
+    <input type="date" class="form-control" required name="dov" value="{{$client['dov']}}">
     <div class="invalid-feedback">Please fill out this field.</div>
   </div>
   <div class="text-center">
   
-  <button type="submit" class="btn btn-primary mt-5 mb-5 ">Save And Submit</button>
+  <button type="submit" class="btn btn-primary mt-5 mb-5 ">Update Client Details</button>
 </div>
 </form>
 

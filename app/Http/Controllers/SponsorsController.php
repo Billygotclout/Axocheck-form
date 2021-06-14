@@ -11,7 +11,7 @@ class SponsorsController extends Controller
     public function create(Request $request)
     {
 
- 
+
 
         $sponsor = [
             "emailAddress" => $request->emailAddress,
@@ -21,15 +21,39 @@ class SponsorsController extends Controller
             "City" => $request->City,
             "Country" => $request->Country,
         ];
-      
+
         $request->session()->put('sponsors', $sponsor);
 
-        return redirect('/client')->with('success', 'Sponsor Created Succesfully');
+        return redirect('/clients')->with('success', 'Sponsor Created Succesfully');
     }
     public function show()
     {
         $sponsors = Sponsor::all();
 
         return view('pages.sponsorList')->with('sponsors', $sponsors);
+    }
+    public function showData($id)
+    {
+
+        $sponsor = Sponsor::find($id);
+        return view('pages.editS', ['sponsor' => $sponsor]);
+    }
+    public function update(Request $request)
+    {
+        $sponsor = Sponsor::find($request->id);
+        $sponsor->emailAddress = $request->emailAddress;
+        $sponsor->Firstname = $request->Firstname;
+        $sponsor->Lastname = $request->Lastname;
+        $sponsor->Phonenumber = $request->Phonenumber;
+        $sponsor->City = $request->City;
+        $sponsor->Country = $request->Country;
+        $sponsor->save();
+        return redirect('/sponsorList')->with('success', 'Sponsor Updated Succesfully');
+    }
+    public function delete($id)
+    {
+        $sponsor = Sponsor::find($id);
+        $sponsor->delete();
+        return redirect('/sponsorList')->with('success', 'Sponsor Deleted Succesfully');
     }
 }
