@@ -20,6 +20,7 @@ class SponsorsController extends Controller
             "Phonenumber" => $request->Phonenumber,
             "City" => $request->City,
             "Country" => $request->Country,
+            "user_id"=> auth()->user()->id
         ];
 
         $request->session()->put('sponsors', $sponsor);
@@ -40,6 +41,11 @@ class SponsorsController extends Controller
     }
     public function update(Request $request)
     {
+        $this->validate($request,[
+
+            'emailAddress'=> 'required|unique:sponsors',
+            'Phonenumber'=> 'required|unique:sponsors'
+        ]);
         $sponsor = Sponsor::find($request->id);
         $sponsor->emailAddress = $request->emailAddress;
         $sponsor->Firstname = $request->Firstname;

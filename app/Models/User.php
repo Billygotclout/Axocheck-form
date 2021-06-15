@@ -40,4 +40,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function sponsor(){
+        return $this->hasMany('App\Models\Sponsor');
+    }
+    public function client(){
+        return $this->hasMany('App\Models\Client');
+    }
 }

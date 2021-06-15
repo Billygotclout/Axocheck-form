@@ -15,10 +15,10 @@ class CreateSponsorsTable extends Migration
     {
         Schema::create('sponsors', function (Blueprint $table) {
             $table->id();
-            $table->string("emailAddress")->unique();
+            $table->string("emailAddress");
             $table->string("Firstname");
             $table->string("Lastname");
-            $table->string("Phonenumber")->unique();
+            $table->string("Phonenumber");
             $table->string("City");
             $table->string("Country");
             

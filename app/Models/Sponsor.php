@@ -11,4 +11,9 @@ class Sponsor extends Model
 
  protected  $table = 'sponsors';
  protected $guarded =[];
+
+ public function user(){
+    return $this->belongsTo('App\Models\User');
+}
+
 }

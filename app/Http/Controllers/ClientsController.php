@@ -8,10 +8,11 @@ use Illuminate\Http\Request;
 
 class ClientsController extends Controller
 {
+    
 
     public function create_cl(Request $request)
     {
-
+        
         $client = new Client;
         $client->Firstname = $request->Firstname;
         $client->Lastname = $request->Lastname;
@@ -25,6 +26,7 @@ class ClientsController extends Controller
         $client->ailments = $request->ailments;
         $client->special = $request->special;
         $client->dov = $request->dov;
+        $client->user_id= auth()->user()->id;
 
         $value = $request->session()->get('sponsors');
         $value = (array) $value;

@@ -21,6 +21,7 @@
            
         </tr>
         @foreach ($sponsors as $sponsor)
+        @if (Auth::user()->id == $sponsor->user_id)
         <tr>
          <td>{{$sponsor->id}}</td>
          <td>{{$sponsor->Firstname}}</td>
@@ -35,6 +36,7 @@
          
         
      </tr>
+     @endif
         @endforeach
       
   
