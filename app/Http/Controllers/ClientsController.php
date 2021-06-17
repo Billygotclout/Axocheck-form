@@ -40,13 +40,13 @@ class ClientsController extends Controller
     public function show()
     {
         $clients = Client::all();
-        return view('pages.clientList')->with('clients', $clients);
+        return view('client.clientList')->with('clients', $clients);
     }
     public function showData($id)
     {
 
         $client = Client::find($id);
-        return view('pages.editC', ['client' => $client]);
+        return view('client.editC', ['client' => $client]);
     }
     public function update(Request $request)
     {

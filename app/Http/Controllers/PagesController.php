@@ -14,12 +14,12 @@ class PagesController extends Controller
     }
     public function client(){
       
-       return view('pages.client');
+       return view('client.client');
       
     }
     public function sponsor(){
       
-       return view('pages.sponsor');
+       return view('sponsor.sponsor');
       
     }
     public function memberList(){
@@ -29,7 +29,7 @@ class PagesController extends Controller
     }
     public function sponsorList(){
       
-       return view('pages.sponsorList');
+       return view('sponsor.sponsorList');
       
     }
 }

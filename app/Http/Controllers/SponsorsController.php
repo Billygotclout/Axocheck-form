@@ -31,20 +31,20 @@ class SponsorsController extends Controller
     {
         $sponsors = Sponsor::all();
 
-        return view('pages.sponsorList')->with('sponsors', $sponsors);
+        return view('sponsor.sponsorList')->with('sponsors', $sponsors);
     }
     public function showData($id)
     {
 
         $sponsor = Sponsor::find($id);
-        return view('pages.editS', ['sponsor' => $sponsor]);
+        return view('sponsor.editS', ['sponsor' => $sponsor]);
     }
     public function update(Request $request)
     {
         $this->validate($request,[
 
-            'emailAddress'=> 'required|unique:sponsors',
-            'Phonenumber'=> 'required|unique:sponsors'
+            'emailAddress'=> 'required',
+            'Phonenumber'=> 'required'
         ]);
         $sponsor = Sponsor::find($request->id);
         $sponsor->emailAddress = $request->emailAddress;
