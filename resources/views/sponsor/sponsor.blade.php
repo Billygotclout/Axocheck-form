@@ -4,11 +4,7 @@
     <p class="h2  pt-3 pb-3 text-uppercase">Sponsor's Details</p>
 <form action="/createS" class=" g-3 needs-validation "  novalidate method="POST">
   @csrf
-  <div class="form-group col-md-6">
-    <label for="email"class="form-label">Email Address</label>
-    <input type="email" class="form-control" name="emailAddress" required>
-    <div class="invalid-feedback">Please fill out this field.</div>
-  </div>
+  
   <div class="form-group col-md-6">
     <label for="fname" class="form-label"> First Name</label>
     <input type="text" class="form-control" name="Firstname" required>
@@ -22,6 +18,11 @@
   <div class="form-group col-md-6">
     <label for="phonenumber" class="form-label"> Phone Number</label>
     <input type="text"  class="form-control" name="Phonenumber" required>
+    <div class="invalid-feedback">Please fill out this field.</div>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="email"class="form-label">Email Address</label>
+    <input type="email" class="form-control" name="emailAddress" required>
     <div class="invalid-feedback">Please fill out this field.</div>
   </div>
   <div class="form-group col-md-6">
