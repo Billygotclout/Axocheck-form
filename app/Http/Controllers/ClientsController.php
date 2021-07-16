@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MailSender;
 use App\Models\Client;
 use App\Models\Sponsor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ClientsController extends Controller
 {
@@ -32,7 +34,7 @@ class ClientsController extends Controller
         $value = (array) $value;
     
         Sponsor::create($value);
-       
+        Mail::to(auth()->user())->send(new MailSender);
         $client->save();
         
         return redirect('/home')->with('success', 'All Details Succesfully Created ');
