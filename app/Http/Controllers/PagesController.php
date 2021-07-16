@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 class PagesController extends Controller
 {
+
+   
     public function index(){
       if (!auth()->user()) {
          return view('pages.index');
@@ -32,4 +34,5 @@ class PagesController extends Controller
        return view('sponsor.sponsorList');
       
     }
+   
 }
